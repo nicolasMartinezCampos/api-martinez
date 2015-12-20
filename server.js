@@ -29,6 +29,8 @@ router.route('/messages')
 
 app.use('/api', router);
 
+app.use(express.static('public'))
+
 app.listen(3000, function(){
   console.log("empezando la magia");
 });
