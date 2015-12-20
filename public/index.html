@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.css">
   </head>
   <body ng-app="messageApp">
+
     <div ng-controller="mainCtrl">
+      <form ng-submit="save()">
+        <input type="text" name="message" ng-model="message.texto">
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+
+      </form>
       <div ng-repeat="message in messages">
         <p>
           {{message.texto}}

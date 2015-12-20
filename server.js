@@ -20,7 +20,6 @@ router.route('/messages')
     })
     .post(function(req,res){
         var message = new Message(req.body);
-        console.log(message);
         message.save(function(err, message){
             if(err) res.send(err);
             res.send(message);
