@@ -23,8 +23,15 @@ router.route('/messages')
         message.save(function(err, message){
             if(err) res.send(err);
             res.send(message);
-        });
+        })
+    })
+    .delete(function(req, res){
+      Message.remove(function(err, messages){
+        if(err) res.send(err);
+        res.send(messages);
+      })
     });
+
 
 app.use('/api', router);
 

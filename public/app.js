@@ -13,4 +13,12 @@ angular.module("messageApp", ["ngRoute"])
         $scope.messages.push(data);
     })
   }
+  $scope.delete = function(){
+    console.log("borrando");
+    messageSrvc.delete().success(function(data){
+      messageSrvc.getAll().success(function(data){
+        $scope.messages = data;
+      })
+    })
+  }
 })

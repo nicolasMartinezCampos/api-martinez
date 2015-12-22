@@ -8,6 +8,10 @@ angular.module("messageApp")
   message.save = function(message){
     return $http.post('/api/messages', message)
   }
+  message.delete = function(message){
+    console.log("borrando 2");
+    return $http.delete('/api/messages')
+  }
 
   return message
 })
